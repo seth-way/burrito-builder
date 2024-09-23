@@ -1,8 +1,9 @@
 import React from 'react';
 import './Orders.css';
 
-const Orders = props => {
-  const orderEls = props.orders.map((order, orderIdx) => {
+const Orders = ({ orders }) => {
+  console.log('props.orders', orders);
+  const orderEls = orders ? orders.map((order, orderIdx) => {
     return (
       <div className='order' key={`order_${orderIdx}`}>
         <h3>{order.name}</h3>
@@ -17,7 +18,7 @@ const Orders = props => {
         </ul>
       </div>
     );
-  });
+  }) : [];
 
   return (
     <section>{orderEls.length ? orderEls : <p>No orders yet!</p>}</section>

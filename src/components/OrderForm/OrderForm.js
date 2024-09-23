@@ -57,7 +57,7 @@ function OrderForm({ addOrder }) {
   ];
   const ingredientButtons = possibleIngredients.map(ingredient => {
     return (
-      <button key={ingredient} name={ingredient} onClick={handleAddIngredient}>
+      <button key={ingredient} name={ingredient} onClick={handleAddIngredient} className='ingredient-btn'>
         {ingredient}
       </button>
     );

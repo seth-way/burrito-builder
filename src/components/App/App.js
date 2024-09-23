@@ -10,23 +10,24 @@ function App() {
   useEffect(() => {
     getOrders()
       .then(data => {
+        console.log('data', data);
         setOrders(data.orders);
       })
       .catch(err => console.error('Error fetching:', err));
   }, []);
 
-  const addOrder = (order) => {
+  const addOrder = order => {
     setOrders(prev => [...prev, order]);
-  }
+  };
 
   return (
     <main className='App'>
       <header>
         <h1>Burrito Builder</h1>
-        <OrderForm addOrder={addOrder}/>
+        <OrderForm addOrder={addOrder} />
       </header>
 
-      <Orders orders={orders}/>
+      <Orders orders={orders} />
     </main>
   );
 }
